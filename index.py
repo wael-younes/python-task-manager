@@ -7,7 +7,7 @@
 # `search_for_task`: will take the queue and title as arguments and search for that set title. (Done)
 # (you have to use Binary Search Algorithm)
 # `sort_tasks`: will take queue as argument and will return a new
-# queue have tasks sorted duration (ascending or descending your coice)
+# queue have tasks sorted duration (ascending or descending your coice)(Done)
 
 
 # Your submission will be a GitHub repository URL holding the name `python-task-manager`. Keep your repository private until the deadline has been reached, then you can switch it to public.
@@ -48,7 +48,7 @@ def comlete_next_task (queue:list):
  #`search_for_task`: second method
 def search_for_task(tasks, title):
     title_set = []
-    sorted_tasks = sorted(tasks, key=lambda 1)
+    sorted_tasks = sorted(tasks, key=lambda tasks: tasks[1])
     low = 0
     high = len(sorted_tasks) - 1
     found_index = -1
@@ -73,7 +73,12 @@ def search_for_task(tasks, title):
     else:
         return "There is no task with title: " + title
 
-
+# 'sort_tasks' third method
+def sort_tasks(tasks : list):
+    ascending = sorted(tasks,key=lambda tasks:tasks[2],reverse=False)
+    descending =sorted(tasks,key=lambda tasks:tasks[2],reverse=True)
+    
+    return ascending
  
     # for i in range (len(tasks)):
     #    if tasks[i][1] == title:
@@ -123,4 +128,9 @@ comlete_next_task(tasks)
 #    print(task) 
 title_search=input("what is the task title that you want to search for ? ")
 search=search_for_task(tasks,title_search)
-print(search)
+for ele in search:
+    print(ele)
+sorted_tasks=sort_tasks(tasks)
+print("the duration assending sort ")
+for ele in sorted_tasks:
+    print(ele)
