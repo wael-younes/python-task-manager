@@ -1,17 +1,3 @@
-# You will simulate a task manager.
-# , lower value of priority the higher it is. Use a single list to hold the tasks in it and to be used as a queue. (Done)
-# You will implement your own functions for the queue (insert, extract, peek, is_empty). (Done)
-# Your program will have the following functions (other than the queue related ones):
-
-# `complete_next_task`: will take the queue as argument and will print and extract the highest priority task (Done)
-# `search_for_task`: will take the queue and title as arguments and search for that set title. (Done)
-# (you have to use Binary Search Algorithm)
-# `sort_tasks`: will take queue as argument and will return a new
-# queue have tasks sorted duration (ascending or descending your coice)(Done)
-
-
-# Your submission will be a GitHub repository URL holding the name `python-task-manager`. Keep your repository private until the deadline has been reached, then you can switch it to public.
-
 # ///////////////////////////////////////////////////////extract/////////////////////////////////////////////
 def extract (tasks : list):
     index=peek(tasks)
@@ -94,7 +80,7 @@ def sort_tasks(tasks : list):
      
 
 
-# The program will generate an X number of tasks (input from the user).    
+  
 t_num=0
 task_priority=0
 task_title=""
@@ -104,8 +90,7 @@ t_num = input("What is the number of tasks? ")
 while t_num == "0" or not t_num.isdigit():
     t_num = input("Number of tasks should be 1 or higher. Please enter the correct number of tasks: ")
 t_num = int(t_num)
-# Each task will have a title, duration (in mins) and a priority (also input from the user)
-#[(p,t,d),(p,t,d)...]
+
 for i in range (t_num):
     task_priority= input(" the priority of task "+ str(i+1)+" is :")
     while not task_priority.isdigit():
